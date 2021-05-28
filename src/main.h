@@ -3,7 +3,7 @@
 
 #if defined(TARGET_M5STACK)
 #include <M5Stack.h>
-#elif defined(TARGET_M5STICK)
+#elif defined(TARGET_M5STICKC)
 #include <M5StickC.h>
 #elif defined(TARGET_M5ATOM)
 #include <M5Atom.h>
