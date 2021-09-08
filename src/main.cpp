@@ -20,15 +20,15 @@ const bool ENABLE_TOUCH = true;
 const bool ENABLE_SD = true;
 const bool ENABLE_BATTERY_ADC = true;
 const bool ENABLE_I2C = false;
-#define M5_BEGIN M5.begin(ENABLE_TOUCH, ENABLE_SD, ENABLE_SERIAL, ENABLE_BATTERY_ADC, ENABLE_I2C)
+#define M5_BEGIN                                                         \
+    M5.begin(ENABLE_TOUCH, ENABLE_SD, ENABLE_SERIAL, ENABLE_BATTERY_ADC, \
+             ENABLE_I2C)
 #endif
 
-void setup(void)
-{
+void setup(void) {
     M5_BEGIN;
 }
 
-void loop(void)
-{
+void loop(void) {
     M5.update();
 }
