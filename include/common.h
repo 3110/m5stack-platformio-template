@@ -12,8 +12,8 @@
         Serial.printf(__VA_ARGS__); \
         Serial.println();           \
     }
-#define SERIAL_MAC_ADDERSS_PRINT(a) printMacAddress(a, false)
-#define SERIAL_MAC_ADDERSS_PRINTLN(a) printMacAddress(a, true)
+#define SERIAL_MAC_ADDRESS_PRINT(a) printMacAddress(a, false)
+#define SERIAL_MAC_ADDRESS_PRINTLN(a) printMacAddress(a, true)
 extern void printMacAddress(const uint8_t *macAddr, const bool newline);
 #else
 #define SERIAL_START
@@ -21,8 +21,8 @@ extern void printMacAddress(const uint8_t *macAddr, const bool newline);
 #define SERIAL_PRINT(a)
 #define SERIAL_PRINTLN(a)
 #define SERIAL_PRINTF(...)
-#define SERIAL_MAC_ADDERSS_PRINT(a)
-#define SERIAL_MAC_ADDERSS_PRINTLN(a)
+#define SERIAL_MAC_ADDRESS_PRINT(a)
+#define SERIAL_MAC_ADDRESS_PRINTLN(a)
 #endif
 
 #endif
