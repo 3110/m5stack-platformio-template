@@ -21,6 +21,7 @@ extern void printMacAddress(const uint8_t *macAddr, const bool newline);
 #define SERIAL_PRINT(a)
 #define SERIAL_PRINTLN(a)
 #define SERIAL_PRINTF(...)
+#define SERIAL_PRINTF_LN(...)
 #define SERIAL_MAC_ADDRESS_PRINT(a)
 #define SERIAL_MAC_ADDRESS_PRINTLN(a)
 #endif
