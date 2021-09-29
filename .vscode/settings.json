@@ -12,4 +12,9 @@
         "vector": "cpp",
         "initializer_list": "cpp"
     },
+    "cSpell.words": [
+        "CRGB",
+        "MQTT",
+        "STICKC"
+    ],
 }

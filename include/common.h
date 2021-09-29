@@ -1,6 +1,10 @@
 #ifndef COMMON_H_
 #define COMMON_H_
 
+#ifndef ETH_ALEN
+#define ETH_ALEN 6
+#endif
+
 #ifdef ENABLE_SERIAL_MONITOR
 #include <Arduino.h>
 #define SERIAL_BEGIN(a) Serial.begin(a)
@@ -14,7 +18,10 @@
     }
 #define SERIAL_MAC_ADDRESS_PRINT(a) printMacAddress(a, false)
 #define SERIAL_MAC_ADDRESS_PRINTLN(a) printMacAddress(a, true)
-extern void printMacAddress(const uint8_t *macAddr, const bool newline);
+#define SERIAL_DUMP(d, l) dump(d, l)
+extern void printMacAddress(const uint8_t* macAddr, const bool newline);
+extern void dump(const uint8_t* data, size_t len, uint8_t indent = 2,
+                 uint8_t width = 16);
 #else
 #define SERIAL_START
 #define SERIAL_BEGIN(a)
@@ -24,6 +31,7 @@ extern void printMacAddress(const uint8_t *macAddr, const bool newline);
 #define SERIAL_PRINTF_LN(...)
 #define SERIAL_MAC_ADDRESS_PRINT(a)
 #define SERIAL_MAC_ADDRESS_PRINTLN(a)
+#define SERIAL_DUMP(d, l)
 #endif
 
 #endif
