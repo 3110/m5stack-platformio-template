@@ -1,3 +1,6 @@
 [submodule "lib/Common"]
 	path = lib/Common
 	url = git@github.com:3110/m5stack-common.git
+[submodule "lib/EspNowManager"]
+	path = lib/EspNowManager
+	url = git@github.com:3110/m5stack-espnow.git
