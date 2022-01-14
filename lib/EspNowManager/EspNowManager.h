@@ -1,5 +1,4 @@
-#ifndef _ESP_NOW_MANAGER_H
-#define _ESP_NOW_MANAGER_H
+#pragma once
 
 #include <WiFi.h>
 #include <esp_now.h>
@@ -39,4 +38,3 @@ private:
     const uint8_t CHANNEL;
     uint8_t ADDRESS[ESP_NOW_ETH_ALEN];
 };
-#endif

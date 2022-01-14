@@ -1,5 +1,4 @@
-#ifndef BLE_KEYBOARD_CONTROLLER_H_
-#define BLE_KEYBOARD_CONTROLLER_H_
+#pragma once
 
 #include <BleKeyboard.h>
 
@@ -37,5 +36,3 @@ private:
     BleKeyboard bleKeyboard;
     bool isBleConnected;
 };
-
-#endif

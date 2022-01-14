@@ -1,5 +1,4 @@
-#ifndef ATOM_MQTT_CLIENT_H_
-#define ATOM_MQTT_CLIENT_H_
+#pragma once
 
 #include <PubSubClient.h>
 
@@ -32,5 +31,3 @@ private:
     WiFiController wifiController;
     PubSubClient client;
 };
-
-#endif

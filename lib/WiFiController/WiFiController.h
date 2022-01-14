@@ -1,6 +1,4 @@
-#ifndef WIFI_CONTROLLER_H_
-#define WIFI_CONTROLLER_H_
-
+#pragma once
 #include <WiFi.h>
 
 #include "NVSLoader.h"
@@ -29,5 +27,3 @@ private:
     NVSLoader nvsLoader;
     WiFiClient client;
 };
-
-#endif

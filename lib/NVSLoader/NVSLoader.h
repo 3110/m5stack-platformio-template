@@ -1,5 +1,4 @@
-#ifndef NVS_LOADER_H_
-#define NVS_LOADER_H_
+#pragma once
 
 #include <FS.h>
 #include <Preferences.h>
@@ -29,5 +28,3 @@ private:
     Preferences prefs;
     char NAMESPACE[NVS_NAMESPACE_LEN + 1];
 };
-
-#endif
