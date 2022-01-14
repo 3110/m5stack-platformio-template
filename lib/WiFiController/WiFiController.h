@@ -3,7 +3,7 @@
 
 #include <WiFi.h>
 
-#include "nvs/NVSLoader.h"
+#include "NVSLoader.h"
 
 class WiFiController {
 public:

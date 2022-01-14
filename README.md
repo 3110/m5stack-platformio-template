@@ -7,9 +7,6 @@ M5Stack製品のプログラムをVSCode上のPlatformIO環境で書くための
 | `default_envs` | 個別のソースの置き場所 | 個別に定義される定数 |
 | :--- | :--- | :--- |
 | `m5stack`  | `src/m5stack`   | `TARGET_M5STACK`  |
-| `m5stickc` | `src/m5stickc` | `TARGET_M5STICKC` |
-| `m5atom`   | `src/m5atom`    | `TARGET_M5ATOM`   |
-| `m5paper`  | `src/m5paper`   | `TARGET_M5PAPER`  |
 
 VSCodeのステータスバー（画面下）にある「Switch ProjectIO Project Environment」を押すと，環境の切り替えメニューが画面上に表示され，`platformio.ino`の`default_envs`を書き換えずに環境を切り替えることができます。
 

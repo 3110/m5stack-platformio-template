@@ -1,4 +1,4 @@
-#include "ble/BLEKeyboardController.h"
+#include "BLEKeyboardController.h"
 
 BLEKeyboardController::BLEKeyboardController(const char* name,
                                              const char* manufacturer)

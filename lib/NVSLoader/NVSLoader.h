@@ -5,6 +5,8 @@
 #include <Preferences.h>
 #include <SPIFFS.h>
 
+#include "Debug.h"
+
 class NVSLoader {
 public:
     NVSLoader(const char* nvsNamespace);

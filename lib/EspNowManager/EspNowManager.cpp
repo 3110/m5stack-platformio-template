@@ -1,4 +1,4 @@
-#include "espnow/EspNowManager.h"
+#include "EspNowManager.h"
 
 const uint8_t EspNowManager::BROADCAST_ADDRESS[ESP_NOW_ETH_ALEN] = {
     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};

@@ -4,7 +4,7 @@
 #include <WiFi.h>
 #include <esp_now.h>
 
-#include "common.h"
+#include "Debug.h"
 
 class EspNowManager {
 public:

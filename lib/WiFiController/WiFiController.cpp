@@ -1,6 +1,4 @@
-#include "wifi/WiFiController.h"
-
-#include "common.h"
+#include "WiFiController.h"
 
 const char NVS_NAMESPACE[] = "WiFiController";
 const char MAX_SSID_LEN = 32;

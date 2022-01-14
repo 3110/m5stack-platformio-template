@@ -1,0 +1,3 @@
+[submodule "lib/Common"]
+	path = lib/Common
+	url = git@github.com:3110/m5stack-common.git

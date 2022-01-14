@@ -3,8 +3,7 @@
 
 #include <PubSubClient.h>
 
-#include "main.h"
-#include "wifi/WiFiController.h"
+#include "WiFiController.h"
 
 class MQTTClient {
 public:

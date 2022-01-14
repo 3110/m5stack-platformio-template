@@ -1,47 +1,31 @@
-#include "main.h"
+#include <M5Stack.h>
+
+#include "Debug.h"
 
 const bool ENABLE_SERIAL = true;
 
-#if defined(TARGET_M5STACK)
 const bool ENABLE_LCD = true;
 const bool ENABLE_SD = true;
 const bool ENABLE_I2C = false;
 #define M5_BEGIN M5.begin(ENABLE_LCD, ENABLE_SD, ENABLE_SERIAL, ENABLE_I2C)
-#elif defined(TARGET_M5STICKC)
-const bool ENABLE_LCD = true;
-const bool ENABLE_POWER = true;
-#define M5_BEGIN M5.begin(ENABLE_LCD, ENABLE_POWER, ENABLE_SERIAL)
-#elif defined(TARGET_M5ATOM)
-const bool ENABLE_I2C = false;
-const bool ENABLE_DISPLAY = true;
-#define M5_BEGIN M5.begin(ENABLE_SERIAL, ENABLE_I2C, ENABLE_DISPLAY)
-#elif defined(TARGET_M5PAPER)
-const bool ENABLE_TOUCH = true;
-const bool ENABLE_SD = true;
-const bool ENABLE_BATTERY_ADC = true;
-const bool ENABLE_I2C = false;
-#define M5_BEGIN                                                         \
-    M5.begin(ENABLE_TOUCH, ENABLE_SD, ENABLE_SERIAL, ENABLE_BATTERY_ADC, \
-             ENABLE_I2C)
-#endif
 
 #ifdef ENABLE_BLE_KEYBOARD
-#include "ble/BLEKeyboardController.h"
+#include "BLEKeyboardController.h"
 const uint8_t SEND_KEY = ' ';
-const char DEVICE_NAME[] = "ATOM Keyboard";
+const char DEVICE_NAME[] = "M5 Keyboard";
 const char DEVICE_MANUFACTURER[] = "M5Stack";
 #endif
 
 #ifdef ENABLE_WIFI
-#include "wifi/WiFiController.h"
+#include "WiFiController.h"
 #endif
 
 #ifdef ENABLE_ESPNOW
-#include "espnow/EspNowManager.h"
+#include "EspNowManager.h"
 #endif
 
 #ifdef ENABLE_MQTT
-#include "mqtt/MQTTClient.h"
+#include "MQTTClient.h"
 #endif
 
 #ifdef ENABLE_BLE_KEYBOARD
@@ -49,19 +33,18 @@ BLEKeyboardController keyboardController(DEVICE_NAME, DEVICE_MANUFACTURER);
 bool isKeyPressed = false;
 
 void doConnect(void) {
-    M5.dis.fillpix(CRGB_CONNECTED);
     SERIAL_PRINTLN("BLE keyboard: Connected");
 }
 
 void doUpdate(BLEKeyboardController& controller) {
     if (isKeyPressed) {
-        if (M5.Btn.isReleased()) {
+        if (M5.BtnA.isReleased()) {
             isKeyPressed = false;
             controller.release(SEND_KEY);
             SERIAL_PRINTF_LN("Key '%c': Released", SEND_KEY);
         }
     } else {
-        if (M5.Btn.isPressed()) {
+        if (M5.BtnA.isPressed()) {
             isKeyPressed = true;
             controller.press(SEND_KEY);
             SERIAL_PRINTF_LN("Key '%c': Pressed", SEND_KEY);
@@ -70,7 +53,6 @@ void doUpdate(BLEKeyboardController& controller) {
 }
 
 void doDisconnect(void) {
-    M5.dis.fillpix(BLEKeyboardController::CRGB_DISCONNECTED);
     SERIAL_PRINTLN("BLE Keyboard: Disconnected");
 }
 #endif

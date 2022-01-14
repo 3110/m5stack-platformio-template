@@ -1,4 +1,4 @@
-#include "mqtt/MQTTClient.h"
+#include "MQTTClient.h"
 
 MQTTClient::MQTTClient()
     : clientId{0}, wifiController(), client(wifiController.getClient()) {
